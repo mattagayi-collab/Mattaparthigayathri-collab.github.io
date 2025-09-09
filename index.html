@@ -53,10 +53,11 @@
     }
     .about-container img {
       width: 250px;
-      height: 250px;
+      max-width: 280px;
       border-radius: 12px;
       border: 3px solid #00ffcc;
-      object-fit: cover;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+      object-fit: contain; /* ✅ prevents cropping */
     }
     .about-text {
       flex: 1;
@@ -75,18 +76,11 @@
       overflow: hidden;
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
+      padding: 20px;
     }
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
-    }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .project-card .content {
-      padding: 20px;
     }
     .project-card h3 {
       color: #00ffcc;
@@ -111,6 +105,32 @@
       color: #fff;
     }
 
+    /* Connect Section */
+    #connect form input, 
+    #connect form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #00ffcc;
+      border-radius: 5px;
+    }
+    #connect form button {
+      width: 100%;
+      padding: 12px;
+      background: #00ffcc;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #connect form button:hover {
+      background: #ff4081;
+      color: #fff;
+    }
+
     footer {
       background: #000;
       color: #aaa;
@@ -119,6 +139,8 @@
       margin-top: 40px;
     }
   </style>
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -128,7 +150,7 @@
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#connect">Connect</a>
   </nav>
 </header>
 
@@ -160,60 +182,89 @@
   <div class="projects-container">
 
     <div class="project-card">
-      <img src="https://img.icons8.com/?size=512&id=23285&format=png" alt="Suicidal Risk Prediction">
-      <div class="content">
-        <h3>🧠 Suicidal Risk Prediction</h3>
-        <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
-        <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
-      </div>
+      <h3>🧠 Suicidal Risk Prediction</h3>
+      <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
+      <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
-      <img src="https://img.icons8.com/?size=512&id=JmGnPaqCQK1F&format=png" alt="Hand Gesture Recognition">
-      <div class="content">
-        <h3>✋ Hand Gesture Recognition</h3>
-        <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
-        <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
-      </div>
+      <h3>✋ Hand Gesture Recognition</h3>
+      <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
+      <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
-      <img src="https://img.icons8.com/?size=512&id=QZOQdxlM20Lk&format=png" alt="Nykaa Product Review">
-      <div class="content">
-        <h3>📊 Nykaa Product Review Analysis</h3>
-        <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
-        <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
-      </div>
+      <h3>📊 Nykaa Product Review Analysis</h3>
+      <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
+      <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
-      <img src="https://img.icons8.com/?size=512&id=24465&format=png" alt="Aggression Detection">
-      <div class="content">
-        <h3>🗣️ Aggression Detection Model</h3>
-        <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
-        <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
-      </div>
+      <h3>🗣️ Aggression Detection Model</h3>
+      <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
+      <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
     </div>
 
     <div class="project-card">
-      <img src="https://img.icons8.com/?size=512&id=12580&format=png" alt="Summary Generation">
-      <div class="content">
-        <h3>📝 Summary Generation App</h3>
-        <p>Flask + NLP web app to generate summaries of input text.</p>
-        <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
-      </div>
+      <h3>📝 Summary Generation App</h3>
+      <p>Flask + NLP web app to generate summaries of input text.</p>
+      <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
     </div>
 
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📧 Email: <a href="mailto:mattagayi@gmail.com">mattagayi@gmail.com</a></p>
-  <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank">www.linkedin.com/in/gayathrigayim</a></p>
-  <p>💻 GitHub: <a href="https://github.com/mattagayi-collab" target="_blank">github.com/mattagayi-collab</a></p>
+<!-- Connect Section -->
+<section id="connect">
+  <h2>Connect</h2>
+  <div style="text-align:center; margin-bottom:20px;">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" style="margin: 10px; font-size: 40px; color:#00ffcc;">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <!-- Email -->
+    <a href="mailto:mattagayi@gmail.com" style="margin: 10px; font-size: 40px; color:#00ffcc;">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+
+  <!-- Contact Form -->
+  <form id="contact-form" style="max-width:600px; margin:auto; text-align:left;">
+    <label>Name</label><br>
+    <input type="text" name="from_name" required><br>
+
+    <label>Email</label><br>
+    <input type="email" name="from_email" required><br>
+
+    <label>Subject</label><br>
+    <input type="text" name="subject"><br>
+
+    <label>Message</label><br>
+    <textarea name="message" rows="5" required></textarea><br>
+
+    <button type="submit">Submit</button>
+  </form>
 </section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // ✅ Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_wcgg8u6", "YOUR_TEMPLATE_ID", this)
+      .then(function() {
+        alert("✅ Message Sent Successfully!");
+      }, function(error) {
+        alert("❌ Failed to send message. Please try again.");
+        console.error("Error:", error);
+      });
+  });
+</script>
 
 <footer>
   <p>Made with ❤️ by Gayathri Mattaparthi</p>
