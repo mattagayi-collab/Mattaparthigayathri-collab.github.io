@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       background-color: #0d0d0d; /* Matte Black */
-      color: #f5f5f5; /* Light Gray Text */
+      color: #f5f5f5; /* Light Gray */
       line-height: 1.6;
     }
 
@@ -23,44 +23,92 @@
 
     nav a {
       margin: 15px;
-      color: #00ffcc; /* Neon Cyan Accent */
+      color: #00ffcc;
       text-decoration: none;
       font-weight: bold;
     }
     nav a:hover {
-      color: #ff4081; /* Pink hover effect */
+      color: #ff4081;
     }
 
     section {
-      padding: 40px;
-      max-width: 900px;
+      padding: 50px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       color: #00ffcc;
-      border-bottom: 2px solid #222;
-      padding-bottom: 10px;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .project {
+    /* About Section Layout */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+    .about-container img {
+      width: 250px;
+      height: 250px;
+      border-radius: 12px;
+      border: 3px solid #00ffcc;
+      object-fit: cover;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    /* Project Cards */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
       background: #1a1a1a;
-      border: 1px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card .content {
       padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      transition: transform 0.3s;
     }
-    .project:hover {
-      transform: scale(1.02);
-      border-color: #00ffcc;
-    }
-
-    a {
+    .project-card h3 {
       color: #00ffcc;
+      margin-bottom: 10px;
     }
-    a:hover {
-      color: #ff4081;
+    .project-card p {
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    .project-card a {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      background: #ff4081;
+      color: #fff;
     }
 
     footer {
@@ -68,74 +116,98 @@
       color: #aaa;
       text-align: center;
       padding: 20px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="profile.jpg" alt="Gayathri Mattaparthi"
-       style="width:150px;height:150px;border-radius:50%;border:3px solid #00ffcc; margin-bottom:15px;">
   <h1>Hello, I'm Gayathri Mattaparthi 👋</h1>
   <p>Software Developer & Data Science Graduate | Full Stack + ML</p>
   <nav>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
+<!-- About Section -->
 <section id="about">
   <h2>About Me</h2>
-  <p>
-    I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
-    <b>Data Science Graduate</b> from Western Michigan University.  
-  </p>
-  <p>
-    I specialize in building <b>full-stack applications</b>, developing 
-    <b>machine learning models</b>, and working with <b>data-driven solutions</b> 
-    that solve real-world problems. I enjoy turning complex challenges into 
-    simple, efficient, and scalable solutions.
-  </p>
-  <p>
-    Beyond coding, I am constantly exploring new technologies, contributing to 
-    open-source, and enhancing my expertise in <b>cloud platforms</b> and 
-    <b>AI/ML</b>. 🚀
-  </p>
+  <div class="about-container">
+    <img src="profile.jpg" alt="Gayathri Mattaparthi">
+    <div class="about-text">
+      <p>
+        I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
+        <b>Data Science Graduate</b> from Western Michigan University.  
+      </p>
+      <p>
+        I specialize in <b>full-stack development</b>, <b>machine learning models</b>, 
+        and <b>data-driven solutions</b>. My expertise includes Python, Java, React, SQL, 
+        and cloud platforms (AWS, Azure, GCP).
+      </p>
+      <p>
+        Outside of coding, I love exploring new technologies and contributing to impactful projects 🚀.
+      </p>
+    </div>
+  </div>
 </section>
 
-
+<!-- Projects Section -->
 <section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>🧠 Suicidal Risk Prediction</h3>
-    <p>Machine learning model to detect suicidal risk from text data.</p>
-    <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction">View on GitHub</a>
-  </div>
-  <div class="project">
-    <h3>✋ Hand Gesture Recognition</h3>
-    <p>Deep learning + Computer Vision model for real-time gesture recognition.</p>
-    <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition">View on GitHub</a>
-  </div>
-  <div class="project">
-    <h3>📊 Nykaa Product Review Analysis</h3>
-    <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
-    <a href="https://github.com/mattagayi-collab/R-Project">View on GitHub</a>
-  </div>
-  <div class="project">
-    <h3>🗣️ Aggression Detection Model</h3>
-    <p>Multiclass NLP model to classify abusive language using TF-IDF + Naive Bayes.</p>
-    <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main">View on GitHub</a>
-  </div>
-  <div class="project">
-    <h3>📝 Summary Generation</h3>
-    <p>Flask + NLP web app to generate summaries of text input.</p>
-    <a href="https://github.com/mattagayi-collab/Summary_generation-main">View on GitHub</a>
+  <h2>My Projects</h2>
+  <div class="projects-container">
+
+    <div class="project-card">
+      <img src="https://img.icons8.com/?size=512&id=23285&format=png" alt="Suicidal Risk Prediction">
+      <div class="content">
+        <h3>🧠 Suicidal Risk Prediction</h3>
+        <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
+        <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://img.icons8.com/?size=512&id=JmGnPaqCQK1F&format=png" alt="Hand Gesture Recognition">
+      <div class="content">
+        <h3>✋ Hand Gesture Recognition</h3>
+        <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
+        <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://img.icons8.com/?size=512&id=QZOQdxlM20Lk&format=png" alt="Nykaa Product Review">
+      <div class="content">
+        <h3>📊 Nykaa Product Review Analysis</h3>
+        <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
+        <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://img.icons8.com/?size=512&id=24465&format=png" alt="Aggression Detection">
+      <div class="content">
+        <h3>🗣️ Aggression Detection Model</h3>
+        <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
+        <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://img.icons8.com/?size=512&id=12580&format=png" alt="Summary Generation">
+      <div class="content">
+        <h3>📝 Summary Generation App</h3>
+        <p>Flask + NLP web app to generate summaries of input text.</p>
+        <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- Contact Section -->
 <section id="contact">
   <h2>Contact</h2>
   <p>📧 Email: <a href="mailto:mattagayi@gmail.com">mattagayi@gmail.com</a></p>
