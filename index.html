@@ -6,7 +6,7 @@
   <title>Gayathri Mattaparthi | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif; /* ✅ Entire site */
       margin: 0;
       padding: 0;
       background-color: #0d0d0d; /* Matte Black */
@@ -42,10 +42,30 @@
       margin: auto;
     }
 
-    h2 {
+    /* ✅ Elegant Headings */
+    h1, h2, h3 {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    h1 {
+      font-size: 2.5em;
+      text-transform: uppercase;
       color: #00ffcc;
-      text-align: center;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #00ffcc;
+      border-bottom: 2px solid #222;
+      padding-bottom: 8px;
       margin-bottom: 20px;
+      text-align: center;
+    }
+    h3 {
+      font-size: 1.4em;
+      color: #ffcc00;
+      margin-bottom: 10px;
     }
 
     /* About Section Layout */
@@ -77,9 +97,6 @@
       margin-bottom: 20px;
       border-left: 4px solid #00ffcc;
     }
-    .edu-card h3 {
-      margin-top: 0;
-    }
 
     /* Project Cards */
     .projects-container {
@@ -98,10 +115,6 @@
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
-    }
-    .project-card h3 {
-      color: #00ffcc;
-      margin-bottom: 10px;
     }
     .project-card p {
       color: #ddd;
@@ -128,6 +141,7 @@
       text-align: center;
       padding: 20px;
       margin-top: 40px;
+      font-family: 'Times New Roman', Times, serif;
     }
   </style>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -140,7 +154,7 @@
   <p>Software Developer & Data Science Graduate | Full Stack + ML</p>
   <nav>
     <a href="#about">About</a>
-    <a href="#education">Education</a> <!-- ✅ New tab -->
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#connect">Connect</a>
   </nav>
@@ -168,7 +182,7 @@
   </div>
 </section>
 
-<!-- ✅ Education Section -->
+<!-- Education Section -->
 <section id="education">
   <h2>Education</h2>
   <div style="max-width:900px; margin:auto;">
@@ -230,7 +244,7 @@
 <section id="connect">
   <h2>Connect</h2>
   <p style="text-align:center; margin-bottom:20px;">
-    Feel free to reach out via <b>Email</b> or <b>LinkedIn</b> 📬
+    Let’s connect and build something extraordinary together! 📬
   </p>
 
   <div style="text-align:center; margin-top:20px;">
@@ -249,7 +263,10 @@
     </a>
   </div>
 </section>
+  
 <!-- Footer -->
-
+<footer>
+  <p>© 2025 Gayathri Mattaparthi — Engineering ideas into innovation.</p>
+</footer>
 </body>
 </html>
