@@ -14,6 +14,11 @@
       line-height: 1.6;
     }
 
+    /* ✅ Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
     header {
       background: #000;
       color: #fff;
@@ -64,6 +69,18 @@
       min-width: 300px;
     }
 
+    /* Education Cards */
+    .edu-card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid #00ffcc;
+    }
+    .edu-card h3 {
+      margin-top: 0;
+    }
+
     /* Project Cards */
     .projects-container {
       display: grid;
@@ -105,32 +122,6 @@
       color: #fff;
     }
 
-    /* Connect Section */
-    #connect form input, 
-    #connect form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      background: #1a1a1a;
-      color: #fff;
-      border: 1px solid #00ffcc;
-      border-radius: 5px;
-    }
-    #connect form button {
-      width: 100%;
-      padding: 12px;
-      background: #00ffcc;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    #connect form button:hover {
-      background: #ff4081;
-      color: #fff;
-    }
-
     footer {
       background: #000;
       color: #aaa;
@@ -143,42 +134,17 @@
 </head>
 <body>
 
+<!-- Header -->
 <header>
   <h1>Hello, I'm Gayathri Mattaparthi 👋</h1>
   <p>Software Developer & Data Science Graduate | Full Stack + ML</p>
   <nav>
     <a href="#about">About</a>
+    <a href="#education">Education</a> <!-- ✅ New tab -->
     <a href="#projects">Projects</a>
     <a href="#connect">Connect</a>
   </nav>
 </header>
-
-<!-- Skills Section -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; text-align:center;">
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
-      <h3>Programming</h3>
-      <p>Python, Java, R, TypeScript, SQL</p>
-    </div>
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
-      <h3>Frontend</h3>
-      <p>React.js, HTML, CSS, JavaScript</p>
-    </div>
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
-      <h3>Backend & APIs</h3>
-      <p>Spring Boot, Flask, Node.js, REST APIs</p>
-    </div>
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
-      <h3>Data Science</h3>
-      <p>Machine Learning, NLP, Computer Vision, Data Visualization</p>
-    </div>
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
-      <h3>Tools & Cloud</h3>
-      <p>Git, Docker, AWS, Azure, GCP</p>
-    </div>
-  </div>
-</section>
 
 <!-- About Section -->
 <section id="about">
@@ -201,12 +167,13 @@
     </div>
   </div>
 </section>
-<!-- Education Section -->
+
+<!-- ✅ Education Section -->
 <section id="education">
   <h2>Education</h2>
   <div style="max-width:900px; margin:auto;">
 
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; margin-bottom:20px; border-left:4px solid #00ffcc;">
+    <div class="edu-card">
       <h3>Western Michigan University – Master of Science, Data Science</h3>
       <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
       <p><b>Relevant Coursework:</b></p>
@@ -219,14 +186,13 @@
       </ul>
     </div>
 
-    <div style="background:#1a1a1a; padding:20px; border-radius:10px; border-left:4px solid #00ffcc;">
+    <div class="edu-card">
       <h3>Jawaharlal Nehru Technological University – Bachelor of Technology, Computer Science</h3>
       <p><b>India | Jun 2015 – May 2019</b></p>
     </div>
 
   </div>
 </section>
-
 
 <!-- Projects Section -->
 <section id="projects">
@@ -263,32 +229,30 @@
 <!-- Connect Section -->
 <section id="connect">
   <h2>Connect</h2>
-  <p style="text-align:center; margin-bottom:20px;">
-    Let’s connect and build something extraordinary together!
-  </p>
-
-  <div style="text-align:center;">
+  <div style="text-align:center; margin-bottom:20px;">
     <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" 
        style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fab fa-linkedin"></i>
     </a>
-    <!-- Email (mailto link) -->
+    <!-- Email -->
     <a href="mailto:mattagayi@gmail.com" 
        style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fas fa-envelope"></i>
     </a>
   </div>
 
-  <!-- Simple button like your friend's -->
+  <!-- Button -->
   <div style="text-align:center; margin-top:20px;">
-    <a href="mailto:mattagayi@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Gayathri," 
-   class="btn" 
-   style="display:inline-block; padding:12px 25px; background:#00ffcc; 
-          color:#000; font-weight:bold; border-radius:5px; text-decoration:none;">
-  Get in Touch
-</a>
+    <a href="mailto:mattagayi@gmail.com" class="btn" 
+       style="display:inline-block; padding:12px 25px; background:#00ffcc; 
+              color:#000; font-weight:bold; border-radius:5px; text-decoration:none;">
+      Get in Touch
+    </a>
   </div>
 </section>
+
+<!-- Footer -->
+
 </body>
 </html>
