@@ -237,52 +237,32 @@
 <!-- Connect Section -->
 <section id="connect">
   <h2>Connect</h2>
-  <div style="text-align:center; margin-bottom:20px;">
-    <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" style="margin: 10px; font-size: 40px; color:#00ffcc;">
+  <p style="text-align:center; margin-bottom:20px;">
+    Let’s connect and build something extraordinary together!
+  </p>
+
+  <div style="text-align:center;">
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" 
+       style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fab fa-linkedin"></i>
     </a>
-    <a href="mailto:mattagayi@gmail.com" style="margin: 10px; font-size: 40px; color:#00ffcc;">
+    <!-- Email (mailto link) -->
+    <a href="mailto:mattagayi@gmail.com" 
+       style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fas fa-envelope"></i>
     </a>
   </div>
 
-  <!-- Contact Form -->
-  <form id="contact-form" style="max-width:600px; margin:auto; text-align:left;">
-    <label>Name</label><br>
-    <input type="text" name="name" required><br>
-
-    <label>Email</label><br>
-    <input type="email" name="email" required><br>
-
-    <label>Subject</label><br>
-    <input type="text" name="title"><br>
-
-    <label>Message</label><br>
-    <textarea name="message" rows="5" required></textarea><br>
-
-    <button type="submit">Submit</button>
-  </form>
+  <!-- Simple button like your friend's -->
+  <div style="text-align:center; margin-top:20px;">
+    <a href="mailto:mattagayi@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Gayathri," 
+   class="btn" 
+   style="display:inline-block; padding:12px 25px; background:#00ffcc; 
+          color:#000; font-weight:bold; border-radius:5px; text-decoration:none;">
+  Get in Touch
+</a>
+  </div>
 </section>
-
-<!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  (function() {
-      emailjs.init("s6Hfqk_EhQmngyx3w"); // ✅ Your Public Key
-  })();
-
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    emailjs.sendForm("service_wcgg8u6", "_ejs-test-mail-service_", this) // ✅ Service ID + Template ID
-      .then(function() {
-        alert("✅ Message Sent Successfully!");
-      }, function(error) {
-        alert("❌ Failed to send message. Please try again.");
-        console.error("Error:", error);
-      });
-  });
-</script>
-
 </body>
 </html>
