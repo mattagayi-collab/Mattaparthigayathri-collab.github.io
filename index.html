@@ -57,7 +57,7 @@
       border-radius: 12px;
       border: 3px solid #00ffcc;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-      object-fit: contain; /* ✅ prevents cropping */
+      object-fit: contain;
     }
     .about-text {
       flex: 1;
@@ -139,7 +139,6 @@
       margin-top: 40px;
     }
   </style>
-  <!-- FontAwesome for icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -154,40 +153,34 @@
   </nav>
 </header>
 
-<!-- About Section -->
 <!-- Skills Section -->
 <section id="skills">
   <h2>Skills</h2>
   <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px; text-align:center;">
-    
     <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
       <h3>Programming</h3>
       <p>Python, Java, R, TypeScript, SQL</p>
     </div>
-
     <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
       <h3>Frontend</h3>
       <p>React.js, HTML, CSS, JavaScript</p>
     </div>
-
     <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
       <h3>Backend & APIs</h3>
       <p>Spring Boot, Flask, Node.js, REST APIs</p>
     </div>
-
     <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
       <h3>Data Science</h3>
       <p>Machine Learning, NLP, Computer Vision, Data Visualization</p>
     </div>
-
     <div style="background:#1a1a1a; padding:20px; border-radius:10px; border:1px solid #00ffcc;">
       <h3>Tools & Cloud</h3>
       <p>Git, Docker, AWS, Azure, GCP</p>
     </div>
-    
   </div>
 </section>
 
+<!-- About Section -->
 <section id="about">
   <h2>About Me</h2>
   <div class="about-container">
@@ -213,37 +206,31 @@
 <section id="projects">
   <h2>My Projects</h2>
   <div class="projects-container">
-
     <div class="project-card">
       <h3>🧠 Suicidal Risk Prediction</h3>
       <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
       <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
     </div>
-
     <div class="project-card">
       <h3>✋ Hand Gesture Recognition</h3>
       <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
       <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
     </div>
-
     <div class="project-card">
       <h3>📊 Nykaa Product Review Analysis</h3>
       <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
       <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
     </div>
-
     <div class="project-card">
       <h3>🗣️ Aggression Detection Model</h3>
       <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
       <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
     </div>
-
     <div class="project-card">
       <h3>📝 Summary Generation App</h3>
       <p>Flask + NLP web app to generate summaries of input text.</p>
       <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
     </div>
-
   </div>
 </section>
 
@@ -251,11 +238,9 @@
 <section id="connect">
   <h2>Connect</h2>
   <div style="text-align:center; margin-bottom:20px;">
-    <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fab fa-linkedin"></i>
     </a>
-    <!-- Email -->
     <a href="mailto:mattagayi@gmail.com" style="margin: 10px; font-size: 40px; color:#00ffcc;">
       <i class="fas fa-envelope"></i>
     </a>
@@ -264,13 +249,13 @@
   <!-- Contact Form -->
   <form id="contact-form" style="max-width:600px; margin:auto; text-align:left;">
     <label>Name</label><br>
-    <input type="text" name="from_name" required><br>
+    <input type="text" name="name" required><br>
 
     <label>Email</label><br>
-    <input type="email" name="from_email" required><br>
+    <input type="email" name="email" required><br>
 
     <label>Subject</label><br>
-    <input type="text" name="subject"><br>
+    <input type="text" name="title"><br>
 
     <label>Message</label><br>
     <textarea name="message" rows="5" required></textarea><br>
@@ -279,8 +264,6 @@
   </form>
 </section>
 
-<!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <!-- EmailJS Script -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
@@ -300,5 +283,6 @@
       });
   });
 </script>
+
 </body>
 </html>
