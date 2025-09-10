@@ -283,13 +283,13 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // 🔑 Replace with your real Public Key from EmailJS
+      emailjs.init("s6Hfqk_EhQmngyx3w"); // ✅ Your Public Key
   })();
 
   document.getElementById("contact-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    emailjs.sendForm("service_wcgg8u6", "_ejs-test-mail-service_", this)
+    emailjs.sendForm("service_wcgg8u6", "_ejs-test-mail-service_", this) // ✅ Service ID + Template ID
       .then(function() {
         alert("✅ Message Sent Successfully!");
       }, function(error) {
@@ -298,7 +298,5 @@
       });
   });
 </script>
-
-
 </body>
 </html>
