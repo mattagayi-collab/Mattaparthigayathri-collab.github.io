@@ -47,13 +47,19 @@
       color: #00ffcc;
     }
 
-    nav a {
-      margin: 0 12px;
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1em;
-    }
+   nav {
+  display: flex;
+  flex-wrap: wrap;   /* makes sure it won’t cut words */
+  justify-content: flex-end; /* pushes to right */
+}
+
+nav a {
+  margin: 0 10px;    /* smaller spacing */
+  font-size: 0.95em; /* smaller text */
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+}
     nav a:hover {
       color: #00e6b8; /* lighter cyan */
     }
