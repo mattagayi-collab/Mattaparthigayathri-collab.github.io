@@ -6,12 +6,11 @@
   <title>Gayathri Mattaparthi | Portfolio</title>
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif; /* Entire site */
+      font-family: 'Times New Roman', Times, serif;
       margin: 0;
       padding: 0;
       background-color: #0d0d0d;
       color: #f5f5f5;
-      line-height: 1.6;
     }
 
     html {
@@ -29,6 +28,36 @@
       background: #0d0d0d;
     }
 
+    /* ✅ Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: rgba(0,0,0,0.85);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+    }
+
+    header .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff4081;
+    }
+
     /* ✅ Hero Section */
     .hero {
       height: 100vh;
@@ -40,17 +69,17 @@
     }
 
     .hero-box {
-      background: rgba(255, 235, 205, 0.9);
+      background: rgba(255, 235, 205, 0.95);
       color: #000;
       padding: 40px;
       border-radius: 15px;
-      max-width: 800px;
+      max-width: 900px;
       box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.6);
     }
 
     .hero-box h1 {
-      font-size: 2.8em;
-      margin-bottom: 15px;
+      font-size: 3em;
+      margin-bottom: 20px;
       font-weight: bold;
     }
 
@@ -59,29 +88,9 @@
       line-height: 1.8;
     }
 
-    /* Header */
-    header {
-      background: #000;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      margin: 15px;
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #ff4081;
-    }
-
+    /* Sections */
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
     }
@@ -95,7 +104,6 @@
       text-align: center;
     }
 
-    /* About */
     .about-container {
       display: flex;
       flex-wrap: wrap;
@@ -108,14 +116,8 @@
       border-radius: 12px;
       border: 3px solid #00ffcc;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-      object-fit: contain;
-    }
-    .about-text {
-      flex: 1;
-      min-width: 300px;
     }
 
-    /* Education */
     .edu-card {
       background: #1a1a1a;
       padding: 20px;
@@ -124,7 +126,6 @@
       border-left: 4px solid #00ffcc;
     }
 
-    /* Projects */
     .projects-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -132,56 +133,13 @@
     }
     .project-card {
       background: #1a1a1a;
-      border-radius: 10px;
       padding: 20px;
+      border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
     }
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
-    }
-    .project-card h3 {
-      color: #00ffcc;
-    }
-    .project-card p {
-      color: #ddd;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-    .project-card a {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #00ffcc;
-      color: #000;
-      font-weight: bold;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .project-card a:hover {
-      background: #ff4081;
-      color: #fff;
-    }
-
-    /* Connect */
-    #connect p {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      background: #00ffcc;
-      color: #000;
-      font-weight: bold;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background: #ff4081;
-      color: #fff;
     }
 
     footer {
@@ -196,22 +154,12 @@
 </head>
 <body>
 
-<!-- ✅ Home Hero Section with Particles -->
+<!-- ✅ Particle Background -->
 <div id="particles-js"></div>
-<section id="home" class="hero">
-  <div class="hero-box">
-    <h1>Welcome to my Portfolio</h1>
-    <p>
-      Hi, I’m <b>Gayathri Mattaparthi</b>, a Software Developer & Data Science Graduate 
-      based in <b>Kalamazoo, Michigan</b> 🌊.  
-      Known for its <b>lakes and beaches</b>, Kalamazoo inspires me to build clean, scalable, 
-      and impactful technology solutions 🚀.
-    </p>
-  </div>
-</section>
 
-<!-- Header -->
+<!-- ✅ Navbar -->
 <header>
+  <div class="logo">Gayathri Mattaparthi</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -221,7 +169,19 @@
   </nav>
 </header>
 
-<!-- About -->
+<!-- ✅ Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-box">
+    <h1>Welcome to my Portfolio</h1>
+    <p>
+      Hi, I’m <b>Gayathri Mattaparthi</b>, a Software Developer & Data Science Graduate 
+      based in <b>Kalamazoo, Michigan</b> 🌊. Known for its <b>lakes and beaches</b>, 
+      Kalamazoo inspires me to build clean, scalable, and impactful technology solutions 🚀.
+    </p>
+  </div>
+</section>
+
+<!-- ✅ About Section -->
 <section id="about">
   <h2>About Me</h2>
   <div class="about-container">
@@ -229,7 +189,7 @@
     <div class="about-text">
       <p>
         I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
-        <b>Data Science Graduate</b> from Western Michigan University.  
+        <b>Data Science Graduate</b> from Western Michigan University.
       </p>
       <p>
         I specialize in <b>full-stack development</b>, <b>machine learning models</b>, 
@@ -243,36 +203,33 @@
   </div>
 </section>
 
-<!-- Education -->
+<!-- ✅ Education Section -->
 <section id="education">
   <h2>Education</h2>
-  <div style="max-width:900px; margin:auto;">
-    <div class="edu-card">
-      <h3>Western Michigan University – Master of Science, Data Science</h3>
-      <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
-      <p><b>Relevant Coursework:</b></p>
-      <ul>
-        <li>Database Systems & Big Data – Data modeling, storage & retrieval</li>
-        <li>Data Mining & Applied Data Mining – Clustering, classification, predictive modeling</li>
-        <li>Machine Learning – Supervised & unsupervised learning with validation techniques</li>
-        <li>Advanced R & Statistical Analysis – Regression, ANOVA, exploratory data analysis</li>
-        <li>Big Data with Python & SAS – Data pipelines with Pandas, NumPy, PySpark, SAS</li>
-      </ul>
-    </div>
-    <div class="edu-card">
-      <h3>Jawaharlal Nehru Technological University – Bachelor of Technology, Computer Science</h3>
-      <p><b>India | Jun 2015 – May 2019</b></p>
-    </div>
+  <div class="edu-card">
+    <h3>Western Michigan University – Master of Science, Data Science</h3>
+    <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
+    <ul>
+      <li>Database Systems & Big Data – Data modeling, storage & retrieval</li>
+      <li>Data Mining & Applied Data Mining – Clustering, classification</li>
+      <li>Machine Learning – Supervised & unsupervised learning</li>
+      <li>Advanced R & Statistical Analysis – Regression, ANOVA</li>
+      <li>Big Data with Python & SAS – Pandas, NumPy, PySpark, SAS</li>
+    </ul>
+  </div>
+  <div class="edu-card">
+    <h3>Jawaharlal Nehru Technological University – Bachelor of Technology, Computer Science</h3>
+    <p><b>India | Jun 2015 – May 2019</b></p>
   </div>
 </section>
 
-<!-- Projects -->
+<!-- ✅ Projects Section -->
 <section id="projects">
   <h2>My Projects</h2>
   <div class="projects-container">
     <div class="project-card">
       <h3>🧠 Suicidal Risk Prediction</h3>
-      <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
+      <p>ML model to detect suicidal risk from text using Logistic Regression and Random Forest.</p>
       <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
@@ -285,39 +242,31 @@
       <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
       <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
     </div>
-    <div class="project-card">
-      <h3>🗣️ Aggression Detection Model</h3>
-      <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
-      <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
-    </div>
-    <div class="project-card">
-      <h3>📝 Summary Generation App</h3>
-      <p>Flask + NLP web app to generate summaries of input text.</p>
-      <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
-    </div>
   </div>
 </section>
 
-<!-- Connect -->
+<!-- ✅ Connect Section -->
 <section id="connect">
   <h2>Connect</h2>
-  <p>Let’s connect and build something extraordinary together! 📬</p>
+  <p style="text-align:center;">
+    Let’s connect and build something extraordinary together! 📬
+  </p>
   <div style="text-align:center; margin-top:20px;">
     <a href="mailto:mattagayi@gmail.com" class="btn">Email Me</a>
     <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" class="btn">LinkedIn</a>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ✅ Footer -->
 <footer>
   <p>© 2025 Gayathri Mattaparthi — Engineering ideas into innovation.</p>
 </footer>
 
-<!-- ✅ Particles.js config -->
+<!-- ✅ Particles Config -->
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 80 },
+    "number": { "value": 90 },
     "size": { "value": 3 },
     "move": { "speed": 2 },
     "line_linked": { "enable": true },
