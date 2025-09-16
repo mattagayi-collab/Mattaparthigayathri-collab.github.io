@@ -47,21 +47,24 @@
       color: #00ffcc;
     }
 
-   nav {
-  display: flex;
-  flex-wrap: wrap;   /* makes sure it won’t cut words */
-  justify-content: flex-end; /* pushes to right */
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;        /* ✅ avoids cutting words */
+      justify-content: flex-end;
+      gap: 12px;              /* ✅ clean spacing */
+    }
 
-nav a {
-  margin: 0 10px;    /* smaller spacing */
-  font-size: 0.95em; /* smaller text */
-  color: #00ffcc;
-  text-decoration: none;
-  font-weight: bold;
-}
+    nav a {
+      padding: 6px 12px;
+      font-size: 1em;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;    /* ✅ prevents split in middle of word */
+    }
+
     nav a:hover {
-      color: #00e6b8; /* lighter cyan */
+      color: #ff4081;
     }
 
     /* ✅ Hero Section */
@@ -144,8 +147,10 @@ nav a {
       font-weight: bold;
       border-radius: 5px;
     }
+
     .project-card a:hover {
-      background: #00e6b8;
+      background: #ff4081;
+      color: #fff;
     }
 
     /* Footer */
@@ -233,7 +238,7 @@ nav a {
   </div>
 </section>
 
-<!-- ✅ Connect Section -->
+<!-- ✅ Contact Section -->
 <section id="connect">
   <h2>Contact</h2>
   <p>📧 <a href="mailto:mattagayi@gmail.com">Email Me</a> | 🔗 <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank">LinkedIn</a></p>
