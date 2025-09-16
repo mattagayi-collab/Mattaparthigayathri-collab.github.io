@@ -6,15 +6,14 @@
   <title>Gayathri Mattaparthi | Portfolio</title>
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif; /* ✅ Entire site */
+      font-family: 'Times New Roman', Times, serif; 
       margin: 0;
       padding: 0;
-      background-color: #0d0d0d; /* Matte Black */
-      color: #f5f5f5; /* Light Gray */
+      background-color: #0d0d0d; 
+      color: #f5f5f5; 
       line-height: 1.6;
     }
 
-    /* ✅ Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
@@ -42,7 +41,6 @@
       margin: auto;
     }
 
-    /* ✅ Elegant Headings */
     h1, h2, h3 {
       font-family: 'Times New Roman', Times, serif;
       font-weight: bold;
@@ -76,17 +74,38 @@
       justify-content: center;
       gap: 30px;
     }
-    .about-container img {
-      width: 250px;
-      max-width: 280px;
+    .profile-img {
+      width: 280px;
       border-radius: 12px;
       border: 3px solid #00ffcc;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-      object-fit: contain;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease-in-out;
+    }
+    .profile-img:hover {
+      filter: grayscale(0%);
     }
     .about-text {
       flex: 1;
       min-width: 300px;
+    }
+    .intro-box {
+      background: #2a2a2a;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border-left: 4px solid #00ffcc;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .highlight-kz {
+      color: #ffcc00;
+      font-weight: bold;
+      background: rgba(255, 204, 0, 0.1);
+      padding: 2px 6px;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
     }
 
     /* Education Cards */
@@ -111,26 +130,11 @@
       box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
       padding: 20px;
-      text-align: center;
     }
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
     }
-
-    /* ✅ Project images with hover grayscale effect */
-    .project-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      filter: grayscale(100%);  /* Default black & white */
-      transition: filter 0.4s ease-in-out;
-    }
-    .project-card img:hover {
-      filter: grayscale(0%);    /* On hover → color */
-    }
-
     .project-card p {
       color: #ddd;
       font-size: 14px;
@@ -179,20 +183,26 @@
 <section id="about">
   <h2>About Me</h2>
   <div class="about-container">
-    <img src="profile.jpg" alt="Gayathri Mattaparthi">
+    <img src="profile.jpg" alt="Gayathri Mattaparthi" class="profile-img">
     <div class="about-text">
-      <p>
-        I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
-        <b>Data Science Graduate</b> from Western Michigan University.  
-      </p>
-      <p>
-        I specialize in <b>full-stack development</b>, <b>machine learning models</b>, 
-        and <b>data-driven solutions</b>. My expertise includes Python, Java, React, SQL, 
-        and cloud platforms (AWS, Azure, GCP).
-      </p>
-      <p>
-        Outside of coding, I love exploring new technologies and contributing to impactful projects 🚀.
-      </p>
+      <div class="intro-box">
+        <p>
+          Hello, my name is <b>Gayathri Mattaparthi</b>, and I currently live in 
+          <span class="highlight-kz">Kalamazoo, Michigan</span>.  
+          I’m a passionate <b>Software Developer</b> and <b>Data Science Graduate</b> 
+          who enjoys solving real-world problems with technology.  
+          My focus is on <b>full-stack development</b>, <b>machine learning</b>, and <b>cloud computing</b>, 
+          building impactful solutions that bridge data and innovation.  
+        </p>
+      </div>
+      <div class="intro-box">
+        <p>
+          Living in <span class="highlight-kz">Kalamazoo</span> has been inspiring — 
+          it’s known for its vibrant community and its beautiful <b>lakes 🌊 and beaches 🏖️</b> 
+          that make it a perfect place to relax, recharge, and find balance beyond coding.  
+          These surroundings fuel my creativity and passion to keep learning and innovating 🚀.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -207,11 +217,11 @@
       <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
       <p><b>Relevant Coursework:</b></p>
       <ul>
-        <li>Database Systems & Big Data – Data modeling, storage & retrieval of high-volume datasets</li>
-        <li>Data Mining & Applied Data Mining – Clustering, classification, predictive modeling</li>
-        <li>Machine Learning – Supervised & unsupervised learning with validation techniques</li>
-        <li>Advanced R & Statistical Analysis – Linear regression, ANOVA, exploratory data analysis</li>
-        <li>Big Data with Python & SAS – Data pipelines with Pandas, NumPy, PySpark, SAS</li>
+        <li>Database Systems & Big Data</li>
+        <li>Data Mining & Applied Data Mining</li>
+        <li>Machine Learning – Supervised & Unsupervised</li>
+        <li>Advanced R & Statistical Analysis</li>
+        <li>Big Data with Python & SAS</li>
       </ul>
     </div>
 
@@ -228,31 +238,26 @@
   <h2>My Projects</h2>
   <div class="projects-container">
     <div class="project-card">
-      <img src="project1.png" alt="Suicidal Risk Prediction">
       <h3>🧠 Suicidal Risk Prediction</h3>
       <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
       <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
-      <img src="project2.png" alt="Hand Gesture Recognition">
       <h3>✋ Hand Gesture Recognition</h3>
       <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
       <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
-      <img src="project3.png" alt="Nykaa Product Review Analysis">
       <h3>📊 Nykaa Product Review Analysis</h3>
       <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
       <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
-      <img src="project4.png" alt="Aggression Detection Model">
       <h3>🗣️ Aggression Detection Model</h3>
       <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
       <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
-      <img src="project5.png" alt="Summary Generation App">
       <h3>📝 Summary Generation App</h3>
       <p>Flask + NLP web app to generate summaries of input text.</p>
       <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
@@ -266,16 +271,12 @@
   <p style="text-align:center; margin-bottom:20px;">
     Let’s connect and build something extraordinary together! 📬
   </p>
-
   <div style="text-align:center; margin-top:20px;">
-    <!-- Email Button -->
     <a href="mailto:mattagayi@gmail.com" class="btn" 
        style="display:inline-block; margin:10px; padding:12px 25px; background:#00ffcc; 
               color:#000; font-weight:bold; border-radius:5px; text-decoration:none;">
       Email Me
     </a>
-
-    <!-- LinkedIn Button -->
     <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" class="btn" 
        style="display:inline-block; margin:10px; padding:12px 25px; background:#00ffcc; 
               color:#000; font-weight:bold; border-radius:5px; text-decoration:none;">
