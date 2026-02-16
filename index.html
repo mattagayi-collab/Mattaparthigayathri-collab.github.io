@@ -12,16 +12,16 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Poppins',sans-serif;background:#0f0f0f;color:#f5f5f5;line-height:1.6;}
 
+/* NAVBAR */
 header{
   position:fixed;
   width:100%;
   top:0;
   backdrop-filter:blur(15px);
-  background:rgba(15,15,15,0.85);
+  background:rgba(15,15,15,0.75);
   padding:18px 0;
   z-index:1000;
 }
-
 .nav-container{
   width:90%;
   margin:auto;
@@ -29,74 +29,63 @@ header{
   justify-content:space-between;
   align-items:center;
 }
-
 .logo{font-weight:700;font-size:1.4rem;color:#7b5cff;}
-
 nav{display:flex;gap:30px;}
-
 .nav-link{
   position:relative;
   text-decoration:none;
   color:#aaa;
   font-weight:500;
+  padding:6px 0;
   transition:0.3s;
 }
-
-.nav-link:hover{color:#fff;}
-
-.nav-link.active{color:#00ffd5;}
-
-section{
-  padding:120px 10%;
-  min-height:100vh;
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:3px;
+  background:linear-gradient(90deg,#7b5cff,#00ffd5);
+  border-radius:3px;
+  transition:0.3s;
 }
+.nav-link:hover::after{width:100%;}
+.nav-link.active{color:#fff;}
+.nav-link.active::after{width:100%;}
 
-.section-title{
-  font-size:2.5rem;
-  margin-bottom:40px;
-  color:#7b5cff;
-  text-align:center;
-}
+/* SECTIONS */
+section{padding:120px 10%;min-height:100vh;}
+.section-title{font-size:2.5rem;margin-bottom:40px;color:#7b5cff;}
 
 /* HERO */
 .hero{
   display:flex;
   flex-direction:column;
+  justify-content:center;
   align-items:center;
   text-align:center;
   gap:60px;
 }
-
-.hero h1{
-  font-size:4rem;
-}
-
+.hero h1{font-size:4rem;margin-bottom:15px;}
 .hero span{
   background:linear-gradient(90deg,#7b5cff,#00ffd5);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+.hero p{color:#bbb;margin-bottom:20px;}
 
-.hero p{color:#bbb;margin-top:10px;}
-
+/* SOCIAL */
 .social-icons{
   display:flex;
   justify-content:center;
-  gap:30px;
+  align-items:center;
+  gap:35px;
   font-size:2rem;
-  margin-top:20px;
+  margin-bottom:30px;
 }
-
-.social-icons a{
-  text-decoration:none;
-  color:#aaa;
-  transition:0.3s;
-}
-
-.social-icons a:hover{
-  color:#00ffd5;
-  transform:scale(1.2);
-}
+.social-icons a{text-decoration:none;color:#aaa;transition:0.3s;}
+.social-icons a:hover{color:#00ffd5;transform:scale(1.2);}
 
 /* CHAT */
 .chat-container{width:600px;max-width:95%;}
@@ -110,10 +99,7 @@ section{
   cursor:pointer;
   transition:0.3s;
 }
-.chat-buttons button:hover{
-  background:#7b5cff;
-  color:white;
-}
+.chat-buttons button:hover{background:#7b5cff;color:white;}
 .chat-box{
   background:#1a1a1a;
   padding:20px;
@@ -149,6 +135,21 @@ section{
   font-weight:bold;
 }
 
+/* ABOUT */
+.about-container{display:flex;flex-wrap:wrap;gap:40px;align-items:center;}
+.about-container img{width:260px;border-radius:15px;}
+.about-text{max-width:600px;color:#bbb;}
+
+/* EDUCATION */
+.edu-card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:25px;
+  transition:0.3s;
+}
+.edu-card:hover{background:#222;}
+
 /* PROJECTS */
 .projects-container{
   display:grid;
@@ -161,11 +162,8 @@ section{
   border-radius:15px;
   transition:0.3s;
 }
-.project-card:hover{
-  background:#222;
-  transform:translateY(-5px);
-}
-.project-card h3{color:#00ffd5;margin-bottom:15px;}
+.project-card:hover{background:#222;transform:translateY(-5px);}
+.project-card h3{margin-bottom:15px;color:#00ffd5;}
 .project-card p{color:#bbb;margin-bottom:15px;}
 .project-card a{
   display:inline-block;
@@ -174,61 +172,22 @@ section{
   border-radius:20px;
   color:#fff;
   text-decoration:none;
-}
-
-/* LIFE SECTION */
-.life-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
-
-.life-card{
-  position:relative;
-  overflow:hidden;
-  border-radius:15px;
-  cursor:pointer;
-}
-
-.life-card img{
-  width:100%;
-  height:400px;
-  object-fit:cover;
-  transition:0.5s;
-}
-
-.life-card:hover img{
-  transform:scale(1.1);
-}
-
-.life-overlay{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
-  padding:20px;
-}
-
-.life-overlay h3{
-  color:#00ffd5;
-  margin-bottom:10px;
-}
-
-.life-overlay p{
-  color:#ddd;
   font-size:0.9rem;
 }
 
-/* CONTACT */
-.btn{
-  display:inline-block;
-  padding:10px 25px;
-  background:#7b5cff;
-  border-radius:25px;
-  color:#fff;
-  text-decoration:none;
-  margin-right:15px;
+/* LIFE SECTION */
+.life-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
 }
+.life-card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:15px;
+}
+.life-card h3{color:#00ffd5;margin-bottom:10px;}
+.life-card p{color:#bbb;}
 
 footer{text-align:center;padding:40px 0;color:#666;}
 </style>
@@ -241,6 +200,8 @@ footer{text-align:center;padding:40px 0;color:#666;}
     <div class="logo">GM</div>
     <nav>
       <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#life" class="nav-link">Life</a>
       <a href="#connect" class="nav-link">Contact</a>
@@ -277,38 +238,26 @@ footer{text-align:center;padding:40px 0;color:#666;}
 <!-- LIFE -->
 <section id="life">
   <h2 class="section-title">Life Beyond Code</h2>
-  <div class="life-grid">
-
+  <div class="life-container">
     <div class="life-card">
-      <img src="travel.jpg" alt="Travel">
-      <div class="life-overlay">
-        <h3>Exploring the World</h3>
-        <p>Traveling fuels adaptability, perspective, and creative thinking.</p>
-      </div>
+      <h3>Creative Fashion Design</h3>
+      <p>Designing outfits from concept to creation — blending structure, aesthetics and originality.</p>
     </div>
-
     <div class="life-card">
-      <img src="fashion.jpg" alt="Fashion">
-      <div class="life-overlay">
-        <h3>Creative Fashion Design</h3>
-        <p>Designing outfits from concept to creation with originality.</p>
-      </div>
+      <h3>Exploring the World</h3>
+      <p>Traveling fuels adaptability, perspective and creative thinking.</p>
     </div>
-
     <div class="life-card">
-      <img src="shopping.jpg" alt="Shopping">
-      <div class="life-overlay">
-        <h3>Retail & Visual Experience</h3>
-        <p>Observing store aesthetics sharpens UX and design sense.</p>
-      </div>
+      <h3>Retail & Visual Experience</h3>
+      <p>Observing store layouts sharpens my eye for design and user experience.</p>
     </div>
-
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="connect">
   <h2 class="section-title">Contact</h2>
+  <p>Let’s connect and build something impactful together.</p>
   <a href="mailto:mattagayi@gmail.com" class="btn">Email Me</a>
   <a href="https://www.linkedin.com/in/gayathri-mattaparthi-a26506293" target="_blank" class="btn">LinkedIn</a>
 </section>
@@ -316,6 +265,19 @@ footer{text-align:center;padding:40px 0;color:#666;}
 <footer>
   © 2025 Gayathri Mattaparthi — Built with Passion & Precision
 </footer>
+
+<script>
+function askQuestion(q){
+  let response="";
+  if(q==="who"){
+    response="Gayathri is a Full Stack Developer & Data Science Graduate passionate about AI and scalable systems.";
+  }
+  if(q==="experience"){
+    response="Experience in Python, Java, React, Machine Learning, NLP, AWS & full-stack systems.";
+  }
+  document.getElementById("chatBox").innerHTML += `<div class="bot-message">${response}</div>`;
+}
+</script>
 
 </body>
 </html>
