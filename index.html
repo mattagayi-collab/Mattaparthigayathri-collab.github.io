@@ -94,6 +94,13 @@ nav{
 section{
   padding:120px 10%;
   min-height:100vh;
+  display:none;
+}
+
+section.active-section{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
 .section-title{
@@ -105,9 +112,6 @@ section{
 /* ================= HERO ================= */
 
 .hero{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
   text-align:center;
   gap:60px;
@@ -313,14 +317,13 @@ footer{
       <a href="#about" class="nav-link">About</a>
       <a href="#education" class="nav-link">Education</a>
       <a href="#projects" class="nav-link">Projects</a>
-      <a href="#life" class="nav-link">Life</a>
       <a href="#connect" class="nav-link">Contact</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
+<section id="home" class="hero active-section">
   <div>
     <h1>Hi, I'm <span>Gayathri Mattaparthi</span></h1>
     <p>Full Stack Developer crafting beautiful and intelligent web experiences</p>
@@ -413,38 +416,6 @@ footer{
   </div>
 </section>
 
-<!-- LIFE -->
-<section id="life">
-  <h2 class="section-title">Life Beyond Code</h2>
-  <div class="projects-container">
-
-    <div class="project-card">
-      <h3>Creative Fashion Design</h3>
-      <p>
-        Designing outfits from concept to creation — blending structure,
-        aesthetics, and originality into wearable art.
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>Exploring the World</h3>
-      <p>
-        Traveling fuels my adaptability and broadens my perspective.
-        Every destination inspires new ideas and creativity.
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>Shopping & Style Exploration</h3>
-      <p>
-        I love exploring new trends, discovering unique pieces,
-        and expressing creativity through fashion and personal style.
-      </p>
-    </div>
-
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="connect">
   <h2 class="section-title">Contact</h2>
@@ -458,6 +429,27 @@ footer{
 </footer>
 
 <script>
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", function(e){
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href").replace("#","");
+
+    sections.forEach(section => {
+      section.classList.remove("active-section");
+    });
+
+    navLinks.forEach(nav => nav.classList.remove("active"));
+
+    document.getElementById(targetId).classList.add("active-section");
+    this.classList.add("active");
+  });
+});
+
+// BOT
 function askQuestion(q){
   let response="";
   if(q==="who"){
