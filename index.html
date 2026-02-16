@@ -5,334 +5,358 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gayathri Mattaparthi | Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  font-family: 'Times New Roman', Times, serif;
-  margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
-  line-height: 1.6;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-/* Particle background */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: #0d0d0d;
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0f0f0f;
+  color:#f5f5f5;
+  line-height:1.6;
 }
 
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
+/* ================= NAVBAR ================= */
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  backdrop-filter:blur(15px);
+  background:rgba(15,15,15,0.75);
+  padding:18px 0;
+  z-index:1000;
 }
 
-.hero-box {
-  background: rgba(255, 235, 205, 0.9);
-  color: #000;
-  padding: 40px;
-  border-radius: 15px;
-  max-width: 800px;
-  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.6);
+.nav-container{
+  width:90%;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.hero-box h1 {
-  font-size: 2.8em;
-  margin-bottom: 15px;
-  font-weight: bold;
+.logo{
+  font-weight:700;
+  font-size:1.4rem;
+  color:#7b5cff;
 }
 
-.hero-box p {
-  font-size: 1.2em;
-  line-height: 1.8;
+nav{
+  display:flex;
+  gap:30px;
 }
 
-/* Header */
-header {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.nav-link{
+  position:relative;
+  text-decoration:none;
+  color:#aaa;
+  font-weight:500;
+  padding:6px 0;
+  transition:0.3s;
 }
 
-nav a {
-  margin: 15px;
-  color: #00ffcc;
-  text-decoration: none;
-  font-weight: bold;
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:3px;
+  background:linear-gradient(90deg,#7b5cff,#00ffd5);
+  border-radius:3px;
+  transition:0.3s;
 }
 
-nav a:hover {
-  color: #ff4081;
+.nav-link:hover::after{
+  width:100%;
 }
 
-section {
-  padding: 60px 20px;
-  max-width: 1100px;
-  margin: auto;
+.nav-link.active{
+  color:#fff;
 }
 
-h2 {
-  font-size: 2em;
-  color: #00ffcc;
-  border-bottom: 2px solid #222;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-  text-align: center;
+.nav-link.active::after{
+  width:100%;
 }
 
-/* About */
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+/* ================= SECTIONS ================= */
+
+section{
+  padding:120px 10%;
+  min-height:100vh;
 }
 
-.about-container img {
-  width: 250px;
-  border-radius: 12px;
-  border: 3px solid #00ffcc;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-  object-fit: contain;
+.section-title{
+  font-size:2.5rem;
+  margin-bottom:40px;
+  color:#7b5cff;
 }
 
-.about-text {
-  flex: 1;
-  min-width: 300px;
+/* ================= HERO ================= */
+
+.hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
 }
 
-/* Education */
-.edu-card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  border-left: 4px solid #00ffcc;
+.hero h1{
+  font-size:3.5rem;
+  margin-bottom:20px;
 }
 
-/* Projects */
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.hero span{
+  background:linear-gradient(90deg,#7b5cff,#00ffd5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.project-card {
-  background: #1a1a1a;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
+.hero p{
+  max-width:600px;
+  margin-bottom:30px;
+  color:#bbb;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
+.btn{
+  display:inline-block;
+  padding:12px 30px;
+  background:linear-gradient(90deg,#7b5cff,#00ffd5);
+  color:#000;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
 
-.project-card h3 {
-  color: #00ffcc;
+.btn:hover{
+  opacity:0.8;
 }
 
-.project-card p {
-  color: #ddd;
-  font-size: 14px;
-  margin-bottom: 15px;
+/* ================= ABOUT ================= */
+
+.about-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  align-items:center;
 }
 
-.project-card a {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #00ffcc;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
+.about-container img{
+  width:260px;
+  border-radius:15px;
 }
 
-.project-card a:hover {
-  background: #ff4081;
-  color: #fff;
+.about-text{
+  max-width:600px;
+  color:#bbb;
 }
 
-/* Connect */
-#connect p {
-  text-align: center;
-  margin-bottom: 20px;
+/* ================= EDUCATION ================= */
+
+.edu-card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:15px;
+  margin-bottom:25px;
+  transition:0.3s;
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 12px 25px;
-  background: #00ffcc;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
+.edu-card:hover{
+  background:#222;
 }
 
-.btn:hover {
-  background: #ff4081;
-  color: #fff;
+/* ================= PROJECTS ================= */
+
+.projects-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
 }
 
-footer {
-  background: #000;
-  color: #aaa;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+.project-card{
+  background:#1a1a1a;
+  padding:25px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.project-card:hover{
+  background:#222;
+  transform:translateY(-5px);
+}
+
+.project-card h3{
+  margin-bottom:15px;
+  color:#00ffd5;
+}
+
+.project-card p{
+  color:#bbb;
+  margin-bottom:15px;
+}
+
+.project-card a{
+  display:inline-block;
+  padding:8px 20px;
+  background:#7b5cff;
+  border-radius:20px;
+  color:#fff;
+  text-decoration:none;
+  font-size:0.9rem;
+}
+
+/* ================= CONTACT ================= */
+
+#connect p{
+  color:#bbb;
+  margin-bottom:20px;
+}
+
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#666;
 }
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
 
-<div id="particles-js"></div>
-
-<section id="home" class="hero">
-  <div class="hero-box">
-    <h1>Welcome to my Portfolio</h1>
-    <p>
-      Hi, I’m <b>Gayathri Mattaparthi</b>, a Software Developer & Data Science Graduate 
-      based in <b>Kalamazoo, Michigan</b> 🌊.  
-      Known for its <b>lakes and beaches</b>, Kalamazoo inspires me to build clean, scalable, 
-      and impactful technology solutions 🚀.
-    </p>
-  </div>
-</section>
-
 <header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#connect">Connect</a>
-  </nav>
+  <div class="nav-container">
+    <div class="logo">GM</div>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#connect" class="nav-link">Contact</a>
+    </nav>
+  </div>
 </header>
 
+<!-- HERO -->
+<section id="home" class="hero">
+  <h1>Hi, I'm <span>Gayathri Mattaparthi</span></h1>
+  <p>
+    Software Developer & Data Science Graduate crafting modern web applications
+    and intelligent machine learning systems.
+  </p>
+  <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
+  <h2 class="section-title">About Me</h2>
   <div class="about-container">
-    <img src="profile.jpg" alt="Gayathri Mattaparthi">
+    <img src="profile.jpg" alt="Profile">
     <div class="about-text">
       <p>
-        I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
-        <b>Data Science Graduate</b> from Western Michigan University.
-      </p>
-      <p>
-        I specialize in <b>full-stack development</b>, <b>machine learning models</b>, 
-        and <b>data-driven solutions</b>. My expertise includes Python, Java, React, SQL, 
-        and cloud platforms (AWS, Azure, GCP).
-      </p>
-      <p>
-        Outside of coding, I love exploring new technologies and contributing to impactful projects 🚀.
+        I specialize in full-stack development, machine learning models,
+        and data-driven solutions. My expertise includes Python, Java,
+        React, SQL, AWS, and GCP.
       </p>
     </div>
   </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
-  <h2>Education</h2>
-  <div style="max-width:900px; margin:auto;">
-    <div class="edu-card">
-      <h3>Western Michigan University – Master of Science, Data Science</h3>
-      <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
-      <p><b>Relevant Coursework:</b></p>
-      <ul>
-        <li>Database Systems & Big Data</li>
-        <li>Data Mining & Applied Data Mining</li>
-        <li>Machine Learning</li>
-        <li>Advanced R & Statistical Analysis</li>
-        <li>Big Data with Python & SAS</li>
-      </ul>
-    </div>
-    <div class="edu-card">
-      <h3>Jawaharlal Nehru Technological University – Bachelor of Technology, Computer Science</h3>
-      <p><b>India | Jun 2015 – May 2019</b></p>
-    </div>
+  <h2 class="section-title">Education</h2>
+
+  <div class="edu-card">
+    <h3>Western Michigan University</h3>
+    <p>Master of Science, Data Science (2022–2023)</p>
   </div>
+
+  <div class="edu-card">
+    <h3>Jawaharlal Nehru Technological University</h3>
+    <p>Bachelor of Technology, Computer Science (2015–2019)</p>
+  </div>
+
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-  <h2>My Projects</h2>
+  <h2 class="section-title">Projects</h2>
+
   <div class="projects-container">
+
     <div class="project-card">
-      <h3>🧠 Suicidal Risk Prediction</h3>
-      <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
-      <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
+      <h3>Suicidal Risk Prediction</h3>
+      <p>ML classification using Logistic Regression, MLP & Random Forest.</p>
+      <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>✋ Hand Gesture Recognition</h3>
-      <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
-      <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
+      <h3>Hand Gesture Recognition</h3>
+      <p>Real-time ASL detection using TensorFlow & MediaPipe.</p>
+      <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>📊 Nykaa Product Review Analysis</h3>
-      <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
-      <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
+      <h3>Nykaa Review Analysis</h3>
+      <p>EDA in R with Shiny dashboard visualization.</p>
+      <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>🗣️ Aggression Detection Model</h3>
-      <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
-      <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
+      <h3>Aggression Detection</h3>
+      <p>NLP classification using TF-IDF & Naive Bayes.</p>
+      <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">GitHub</a>
     </div>
 
     <div class="project-card">
-      <h3>📝 Summary Generation App</h3>
-      <p>Flask + NLP web app to generate summaries of input text.</p>
-      <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
+      <h3>Summary Generation App</h3>
+      <p>Flask-based NLP summarization web app.</p>
+      <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">GitHub</a>
     </div>
+
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="connect">
-  <h2>Connect</h2>
-  <p>Let’s connect and build something extraordinary together! 📬</p>
-  <div style="text-align:center; margin-top:20px;">
-    <a href="mailto:mattagayi@gmail.com" class="btn">Email Me</a>
-    <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" class="btn">LinkedIn</a>
-  </div>
+  <h2 class="section-title">Contact</h2>
+  <p>Let’s connect and build something impactful together.</p>
+  <a href="mailto:mattagayi@gmail.com" class="btn">Email Me</a>
+  <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" class="btn">LinkedIn</a>
 </section>
 
 <footer>
-  <p>© 2025 Gayathri Mattaparthi — Engineering ideas into innovation.</p>
+  © 2025 Gayathri Mattaparthi — Built with Passion & Precision
 </footer>
 
 <script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 80 },
-    "size": { "value": 3 },
-    "move": { "speed": 2 },
-    "line_linked": { "enable": true },
-    "color": { "value": "#00ffcc" }
-  }
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
 });
 </script>
 
