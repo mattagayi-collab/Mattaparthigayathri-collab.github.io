@@ -173,51 +173,6 @@ h2 {
   color: #fff;
 }
 
-/* ================= LIFE SECTION ================= */
-
-.life-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.life-card {
-  position: relative;
-  height: 260px;
-  border-radius: 15px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  padding: 20px;
-  color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.life-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 20px rgba(0, 255, 204, 0.4);
-}
-
-.life-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.life-card div {
-  position: relative;
-  z-index: 2;
-}
-
-.life-card h3 {
-  color: #00ffcc;
-  margin-bottom: 8px;
-}
-
 /* Connect */
 #connect p {
   text-align: center;
@@ -261,7 +216,9 @@ footer {
     <h1>Welcome to my Portfolio</h1>
     <p>
       Hi, I’m <b>Gayathri Mattaparthi</b>, a Software Developer & Data Science Graduate 
-      based in <b>Kalamazoo, Michigan</b> 🌊.
+      based in <b>Kalamazoo, Michigan</b> 🌊.  
+      Known for its <b>lakes and beaches</b>, Kalamazoo inspires me to build clean, scalable, 
+      and impactful technology solutions 🚀.
     </p>
   </div>
 </section>
@@ -272,45 +229,100 @@ footer {
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#projects">Projects</a>
-    <a href="#life">Life</a>
     <a href="#connect">Connect</a>
   </nav>
 </header>
 
-<!-- Your original sections remain exactly the same -->
-
-<!-- LIFE SECTION -->
-<section id="life">
-  <h2>Life Beyond Code</h2>
-  <p style="text-align:center; margin-bottom:40px;">
-    Creativity, exploration, and inspiration beyond technology.
-  </p>
-
-  <div class="life-container">
-
-    <div class="life-card" style="background-image: url('life/travel.jpg');">
-      <div>
-        <h3>🌍 Travel & Exploration</h3>
-        <p>Traveling inspires my problem-solving mindset and strengthens adaptability.</p>
-      </div>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <img src="profile.jpg" alt="Gayathri Mattaparthi">
+    <div class="about-text">
+      <p>
+        I’m <b>Gayathri Mattaparthi</b>, a passionate <b>Software Developer</b> and 
+        <b>Data Science Graduate</b> from Western Michigan University.
+      </p>
+      <p>
+        I specialize in <b>full-stack development</b>, <b>machine learning models</b>, 
+        and <b>data-driven solutions</b>. My expertise includes Python, Java, React, SQL, 
+        and cloud platforms (AWS, Azure, GCP).
+      </p>
+      <p>
+        Outside of coding, I love exploring new technologies and contributing to impactful projects 🚀.
+      </p>
     </div>
-
-    <div class="life-card" style="background-image: url('life/fashion.jpg');">
-      <div>
-        <h3>👗 Designing Outfits</h3>
-        <p>Designing outfits from scratch reflects structure, balance, and creativity.</p>
-      </div>
-    </div>
-
-    <div class="life-card" style="background-image: url('life/shopping.jpg');">
-      <div>
-        <h3>🛍 Design Observation</h3>
-        <p>Observing layouts and branding sharpens my eye for UX and aesthetics.</p>
-      </div>
-    </div>
-
   </div>
 </section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div style="max-width:900px; margin:auto;">
+    <div class="edu-card">
+      <h3>Western Michigan University – Master of Science, Data Science</h3>
+      <p><b>Michigan, USA | Jan 2022 – Dec 2023</b></p>
+      <p><b>Relevant Coursework:</b></p>
+      <ul>
+        <li>Database Systems & Big Data</li>
+        <li>Data Mining & Applied Data Mining</li>
+        <li>Machine Learning</li>
+        <li>Advanced R & Statistical Analysis</li>
+        <li>Big Data with Python & SAS</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <h3>Jawaharlal Nehru Technological University – Bachelor of Technology, Computer Science</h3>
+      <p><b>India | Jun 2015 – May 2019</b></p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>🧠 Suicidal Risk Prediction</h3>
+      <p>ML model to detect suicidal risk from text using MLP, Logistic Regression, and Random Forest.</p>
+      <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>✋ Hand Gesture Recognition</h3>
+      <p>Real-time ASL detection using Python, TensorFlow, MediaPipe, and LSTM.</p>
+      <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>📊 Nykaa Product Review Analysis</h3>
+      <p>EDA project in R with Shiny dashboard to analyze e-commerce product reviews.</p>
+      <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>🗣️ Aggression Detection Model</h3>
+      <p>Multiclass NLP model for abusive speech classification using TF-IDF + Naive Bayes.</p>
+      <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <h3>📝 Summary Generation App</h3>
+      <p>Flask + NLP web app to generate summaries of input text.</p>
+      <a href="https://github.com/mattagayi-collab/Summary_generation-main" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section id="connect">
+  <h2>Connect</h2>
+  <p>Let’s connect and build something extraordinary together! 📬</p>
+  <div style="text-align:center; margin-top:20px;">
+    <a href="mailto:mattagayi@gmail.com" class="btn">Email Me</a>
+    <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank" class="btn">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Gayathri Mattaparthi — Engineering ideas into innovation.</p>
+</footer>
 
 <script>
 particlesJS("particles-js", {
