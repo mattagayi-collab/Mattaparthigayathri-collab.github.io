@@ -10,6 +10,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+
 body{
   font-family:'Poppins',sans-serif;
   background:#0f0f0f;
@@ -75,31 +76,133 @@ nav{
 
 /* ================= SECTIONS ================= */
 
-section{padding:120px 10%;min-height:100vh;}
-.section-title{font-size:2.5rem;margin-bottom:40px;color:#7b5cff;}
+section{
+  padding:120px 10%;
+  min-height:100vh;
+}
+
+.section-title{
+  font-size:2.5rem;
+  margin-bottom:40px;
+  color:#7b5cff;
+}
 
 /* ================= HERO ================= */
 
-.hero{display:flex;flex-direction:column;justify-content:center;}
-.hero h1{font-size:3.5rem;margin-bottom:20px;}
-.hero span{
+.hero{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:60px;
+}
+
+.hero-center h1{
+  font-size:4rem;
+  margin-bottom:15px;
+}
+
+.hero-center span{
   background:linear-gradient(90deg,#7b5cff,#00ffd5);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-.hero p{max-width:600px;margin-bottom:30px;color:#bbb;}
 
-.btn{
-  display:inline-block;
-  padding:12px 30px;
-  background:linear-gradient(90deg,#7b5cff,#00ffd5);
-  color:#000;
-  border-radius:30px;
+.hero-center p{
+  color:#bbb;
+  margin-bottom:25px;
+}
+
+.social-icons{
+  display:flex;
+  gap:25px;
+  font-size:1.5rem;
+  margin-bottom:20px;
+}
+
+.social-icons a{
   text-decoration:none;
-  font-weight:600;
+  color:#aaa;
   transition:0.3s;
 }
-.btn:hover{opacity:0.8;}
+
+.social-icons a:hover{color:#00ffd5;}
+
+.down-arrow{
+  font-size:2rem;
+  color:#777;
+  margin-top:20px;
+}
+
+/* ================= CHAT ================= */
+
+.chat-container{
+  width:600px;
+  max-width:95%;
+}
+
+.chat-buttons{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.chat-buttons button{
+  padding:10px 20px;
+  border-radius:25px;
+  border:1px solid #7b5cff;
+  background:transparent;
+  color:#7b5cff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.chat-buttons button:hover{
+  background:#7b5cff;
+  color:white;
+}
+
+.chat-box{
+  background:#1a1a1a;
+  padding:20px;
+  border-radius:20px;
+  height:200px;
+  overflow-y:auto;
+  margin-bottom:15px;
+}
+
+.bot-message{
+  background:#222;
+  padding:12px 18px;
+  border-radius:15px;
+  display:inline-block;
+  color:#bbb;
+  margin-bottom:10px;
+}
+
+.chat-input{
+  display:flex;
+  gap:10px;
+}
+
+.chat-input input{
+  flex:1;
+  padding:12px 15px;
+  border-radius:25px;
+  border:none;
+  background:#222;
+  color:white;
+}
+
+.chat-input button{
+  padding:12px 20px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(90deg,#7b5cff,#00ffd5);
+  cursor:pointer;
+}
 
 /* ================= ABOUT ================= */
 
@@ -109,8 +212,16 @@ section{padding:120px 10%;min-height:100vh;}
   gap:40px;
   align-items:center;
 }
-.about-container img{width:260px;border-radius:15px;}
-.about-text{max-width:600px;color:#bbb;}
+
+.about-container img{
+  width:260px;
+  border-radius:15px;
+}
+
+.about-text{
+  max-width:600px;
+  color:#bbb;
+}
 
 /* ================= EDUCATION ================= */
 
@@ -121,6 +232,7 @@ section{padding:120px 10%;min-height:100vh;}
   margin-bottom:25px;
   transition:0.3s;
 }
+
 .edu-card:hover{background:#222;}
 
 /* ================= PROJECTS ================= */
@@ -137,12 +249,22 @@ section{padding:120px 10%;min-height:100vh;}
   border-radius:15px;
   transition:0.3s;
 }
+
 .project-card:hover{
   background:#222;
   transform:translateY(-5px);
 }
-.project-card h3{margin-bottom:15px;color:#00ffd5;}
-.project-card p{color:#bbb;margin-bottom:15px;}
+
+.project-card h3{
+  margin-bottom:15px;
+  color:#00ffd5;
+}
+
+.project-card p{
+  color:#bbb;
+  margin-bottom:15px;
+}
+
 .project-card a{
   display:inline-block;
   padding:8px 20px;
@@ -153,119 +275,12 @@ section{padding:120px 10%;min-height:100vh;}
   font-size:0.9rem;
 }
 
-/* ================= CONTACT ================= */
+/* ================= FOOTER ================= */
 
-#connect p{color:#bbb;margin-bottom:20px;}
-footer{text-align:center;padding:40px 0;color:#666;}
-
-/* ================= CHAT WIDGET ================= */
-
-.chat-toggle{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:linear-gradient(90deg,#7b5cff,#00ffd5);
-  color:#000;
-  font-size:22px;
-  padding:14px;
-  border-radius:50%;
-  cursor:pointer;
-  z-index:2000;
-}
-
-.chat-container{
-  position:fixed;
-  bottom:90px;
-  right:25px;
-  width:350px;
-  height:500px;
-  background:#1a1a1a;
-  border-radius:15px;
-  display:none;
-  flex-direction:column;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-  z-index:2000;
-}
-
-.chat-header{
-  background:linear-gradient(90deg,#7b5cff,#00ffd5);
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-weight:600;
-}
-
-.chat-header button{
-  background:none;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
-}
-
-.chat-messages{
-  flex:1;
-  padding:15px;
-  overflow-y:auto;
-  font-size:14px;
-}
-
-.bot-message{
-  background:#2a2a2a;
-  padding:10px 14px;
-  border-radius:12px;
-  margin-bottom:10px;
-  color:#ddd;
-}
-
-.user-message{
-  background:#7b5cff;
-  padding:10px 14px;
-  border-radius:12px;
-  margin-bottom:10px;
-  align-self:flex-end;
-  color:#fff;
-}
-
-.chat-buttons{
-  padding:10px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.chat-buttons button{
-  flex:1;
-  padding:6px;
-  font-size:12px;
-  border-radius:20px;
-  border:1px solid #7b5cff;
-  background:transparent;
-  color:#7b5cff;
-  cursor:pointer;
-}
-
-.chat-input{
-  display:flex;
-  border-top:1px solid #333;
-}
-
-.chat-input input{
-  flex:1;
-  padding:12px;
-  border:none;
-  outline:none;
-  background:#111;
-  color:#fff;
-}
-
-.chat-input button{
-  padding:12px;
-  background:#7b5cff;
-  border:none;
-  color:#fff;
-  cursor:pointer;
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:#666;
 }
 </style>
 </head>
@@ -287,12 +302,36 @@ footer{text-align:center;padding:40px 0;color:#666;}
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <h1>Hi, I'm <span>Gayathri Mattaparthi</span></h1>
-  <p>
-    Software Developer & Data Science Graduate crafting modern web applications
-    and intelligent machine learning systems.
-  </p>
-  <a href="#projects" class="btn">View My Work</a>
+
+  <div class="hero-center">
+    <h1>Hi, I'm <span>Gayathri Mattaparthi</span></h1>
+    <p>Full Stack Developer crafting beautiful and intelligent web experiences</p>
+
+    <div class="social-icons">
+      <a href="https://github.com/mattagayi-collab" target="_blank">🐙</a>
+      <a href="https://www.linkedin.com/in/gayathrigayim" target="_blank">💼</a>
+      <a href="mailto:mattagayi@gmail.com">✉️</a>
+    </div>
+
+    <div class="down-arrow">⌄</div>
+  </div>
+
+  <div class="chat-container">
+    <div class="chat-buttons">
+      <button onclick="askQuestion('Who is Gayathri?')">Who is Gayathri?</button>
+      <button onclick="askQuestion('Gayathri experience')">Gayathri's experience?</button>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+      <div class="bot-message">👋 Hi! Ask me something about Gayathri.</div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your question..." />
+      <button onclick="sendMessage()">↑</button>
+    </div>
+  </div>
+
 </section>
 
 <!-- ABOUT -->
@@ -303,8 +342,7 @@ footer{text-align:center;padding:40px 0;color:#666;}
     <div class="about-text">
       <p>
         I specialize in full-stack development, machine learning models,
-        and data-driven solutions. My expertise includes Python, Java,
-        React, SQL, AWS, and GCP.
+        and data-driven solutions using Python, Java, React, AWS & GCP.
       </p>
     </div>
   </div>
@@ -313,10 +351,12 @@ footer{text-align:center;padding:40px 0;color:#666;}
 <!-- EDUCATION -->
 <section id="education">
   <h2 class="section-title">Education</h2>
+
   <div class="edu-card">
     <h3>Western Michigan University</h3>
     <p>Master of Science, Data Science (2022–2023)</p>
   </div>
+
   <div class="edu-card">
     <h3>Jawaharlal Nehru Technological University</h3>
     <p>Bachelor of Technology, Computer Science (2015–2019)</p>
@@ -326,27 +366,32 @@ footer{text-align:center;padding:40px 0;color:#666;}
 <!-- PROJECTS -->
 <section id="projects">
   <h2 class="section-title">Projects</h2>
+
   <div class="projects-container">
     <div class="project-card">
       <h3>Suicidal Risk Prediction</h3>
       <p>ML classification using Logistic Regression, MLP & Random Forest.</p>
       <a href="https://github.com/mattagayi-collab/suicidal_risk_prediction" target="_blank">GitHub</a>
     </div>
+
     <div class="project-card">
       <h3>Hand Gesture Recognition</h3>
       <p>Real-time ASL detection using TensorFlow & MediaPipe.</p>
       <a href="https://github.com/mattagayi-collab/Hand_gesture_recognition" target="_blank">GitHub</a>
     </div>
+
     <div class="project-card">
       <h3>Nykaa Review Analysis</h3>
       <p>EDA in R with Shiny dashboard visualization.</p>
       <a href="https://github.com/mattagayi-collab/R-Project" target="_blank">GitHub</a>
     </div>
+
     <div class="project-card">
       <h3>Aggression Detection</h3>
       <p>NLP classification using TF-IDF & Naive Bayes.</p>
       <a href="https://github.com/mattagayi-collab/Aggression_detection_model-main" target="_blank">GitHub</a>
     </div>
+
     <div class="project-card">
       <h3>Summary Generation App</h3>
       <p>Flask-based NLP summarization web app.</p>
@@ -367,94 +412,35 @@ footer{text-align:center;padding:40px 0;color:#666;}
   © 2025 Gayathri Mattaparthi — Built with Passion & Precision
 </footer>
 
-<!-- CHAT WIDGET -->
-<div class="chat-toggle" id="chatToggle">🤖</div>
-
-<div class="chat-container" id="chatContainer">
-  <div class="chat-header">
-    <span>Gayathri AI</span>
-    <button id="closeChat">✕</button>
-  </div>
-  <div class="chat-messages" id="chatMessages">
-    <div class="bot-message">
-      Hi 👋 I'm Gayathri's assistant. Ask me anything!
-    </div>
-  </div>
-  <div class="chat-buttons">
-    <button onclick="quickMessage('Who is Gayathri?')">Who is Gayathri?</button>
-    <button onclick="quickMessage('What projects has she built?')">View Projects</button>
-  </div>
-  <div class="chat-input">
-    <input type="text" id="chatInput" placeholder="Type your question..." />
-    <button onclick="sendMessage()">↑</button>
-  </div>
-</div>
-
 <script>
-const sections=document.querySelectorAll("section");
-const navLinks=document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll",()=>{
-  let current="";
-  sections.forEach(section=>{
-    const sectionTop=section.offsetTop-150;
-    if(pageYOffset>=sectionTop){
-      current=section.getAttribute("id");
-    }
-  });
-  navLinks.forEach(link=>{
-    link.classList.remove("active");
-    if(link.getAttribute("href").includes(current)){
-      link.classList.add("active");
-    }
-  });
-});
-
-/* CHAT FUNCTIONALITY */
-
-const chatToggle=document.getElementById("chatToggle");
-const chatContainer=document.getElementById("chatContainer");
-const closeChat=document.getElementById("closeChat");
-const chatMessages=document.getElementById("chatMessages");
-
-chatToggle.onclick=()=>{chatContainer.style.display="flex";}
-closeChat.onclick=()=>{chatContainer.style.display="none";}
+function askQuestion(question){
+  document.getElementById("chatBox").innerHTML +=
+    `<div class="bot-message">${getBotResponse(question)}</div>`;
+}
 
 function sendMessage(){
-  const input=document.getElementById("chatInput");
-  const message=input.value.trim();
-  if(!message)return;
+  const input = document.getElementById("userInput");
+  const message = input.value;
+  if(message.trim() === "") return;
 
-  const userDiv=document.createElement("div");
-  userDiv.className="user-message";
-  userDiv.innerText=message;
-  chatMessages.appendChild(userDiv);
+  document.getElementById("chatBox").innerHTML +=
+    `<div class="bot-message">${getBotResponse(message)}</div>`;
 
-  input.value="";
-
-  setTimeout(()=>{
-    const botDiv=document.createElement("div");
-    botDiv.className="bot-message";
-    botDiv.innerText=generateResponse(message);
-    chatMessages.appendChild(botDiv);
-    chatMessages.scrollTop=chatMessages.scrollHeight;
-  },500);
+  input.value = "";
 }
 
-function quickMessage(text){
-  document.getElementById("chatInput").value=text;
-  sendMessage();
-}
+function getBotResponse(message){
+  message = message.toLowerCase();
 
-function generateResponse(message){
-  message=message.toLowerCase();
   if(message.includes("who")){
-    return "Gayathri is a Software Developer and Data Science graduate specializing in ML and full-stack development.";
+    return "Gayathri is a Full Stack Developer & Data Science Graduate passionate about building scalable web and AI solutions.";
   }
-  if(message.includes("project")){
-    return "She has built ML models, NLP systems, and full-stack web apps. Scroll to the Projects section to explore.";
+
+  if(message.includes("experience")){
+    return "She has experience in Python, Java, React, Machine Learning, AWS, and NLP-based systems.";
   }
-  return "Thanks for your question! Explore the portfolio sections above.";
+
+  return "Great question! Gayathri loves building impactful technology.";
 }
 </script>
 
